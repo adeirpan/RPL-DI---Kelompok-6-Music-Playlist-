@@ -1,15 +1,16 @@
-# RPL DI : Kelompok 6 (Music Playlist)
- Tugas RPL Desain dan Implementasi pembuatan Aplikasi 
+# music
 
-Anggota Kelompok:
+A new Flutter project.
 
-REZKI FAUZAN ARIFIN (1301194211)
+## Getting Started
 
-ADE IRPAN HIDAYAT  (1301194413)
+This project is a starting point for a Flutter application.
 
-MUHAMMAD HIKAMI DZULFIQAR  (1301194118)
+A few resources to get you started if this is your first Flutter project:
 
-RANDY PRIATMA FRIAZI  (1301194261)
+- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
+- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
-FREZA RIO RIZQIANO (1301194375)
-
+For help getting started with Flutter, view our
+[online documentation](https://flutter.dev/docs), which offers tutorials,
+samples, guidance on mobile development, and a full API reference.
