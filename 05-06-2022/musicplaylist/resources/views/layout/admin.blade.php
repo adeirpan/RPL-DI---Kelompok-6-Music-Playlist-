@@ -56,8 +56,8 @@
                     </li>
 
                     <li class="nav-link">
-                        <a href="/admin/profile">
-                            <span class="text nav-text">PROFILE</span>
+                        <a href="/admin/user">
+                            <span class="text nav-text">USER</span>
                         </a>
                     </li>
 

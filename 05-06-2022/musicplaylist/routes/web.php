@@ -4,7 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\loginController;
 use App\Http\Controllers\musicController;
 use App\Http\Controllers\registerController;
-use App\Models\music;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\adminUserController;
+use App\Models\user;
 use App\Models\musics;
 use Illuminate\Cache\RateLimiting\Limit;
 
@@ -30,9 +32,14 @@ Route::get('/admin', function () {
 });
 
 Route::resource('/admin/music', musicController::class);
+Route::resource('/admin/user', adminUserController::class);
+Route::resource('/profile', ProfileController::class);
+
 Route::get('/admin/music', function () {
     return view('admin.musicControl');
 });
+
+
 
 Route::get('/dashboard', function () {
     $popularMusic = musics::limit(4)->get();

@@ -16,7 +16,7 @@
                     <th width="3px">TITLE</th>
                     <th width="3px">TIME</th>
                     <th width="3px">ALBUM</th>
-
+                    <th width="3px">Action</th>
                 </tr>
             </thead>
 
@@ -26,6 +26,16 @@
                     <td>Tulus - Hati-Hati di Jalan</td>
                     <td>4:02</td>
                     <td>Manusia</td>
+                    <td>
+                        <form
+                            method="post"
+                            action="admin/user/{{ $data->id }}"
+                            style="display:inline"
+                            onsubmit="return confirm('Yakin Mengubah Status?')">
+                            <!-- @csrf @method('DELETE') -->
+                            <button class="logout">Ubah Status</button>
+                        </form>
+                    </td>
 
                 </tr>
                 <tr>
