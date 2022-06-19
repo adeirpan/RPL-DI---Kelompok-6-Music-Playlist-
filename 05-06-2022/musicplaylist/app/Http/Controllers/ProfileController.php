@@ -58,11 +58,10 @@ class ProfileController extends Controller
      */
     public function edit($id)
     {
-        return view('admin.musicForm', [
+        return view('profileEdit', [
             'title' => 'Edit',
             'method' => 'PUT',
             'action' => "profile/$id",
-            // 'data' => Product::find($id)
             'data' => user::find($id)
         ]);
     }
@@ -78,9 +77,8 @@ class ProfileController extends Controller
     {
         $user = user::find($id);
         $user->name = $request->name;
-        $user->price = $request->price;
-        $user->deskripsi = $request->deskripsi;
-        $user->image = $request->image;
+        $user->email = $request->email;
+        $user->jenisKelamin = $request->jenisKelamin;
         $user->save();
         return redirect('/profile')->with('msg', 'Edit berhasil');
     }

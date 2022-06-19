@@ -211,7 +211,7 @@ body{
 .home .volume i{
 	cursor: pointer;
 	padding: 8px 12px;
-	background: #148F77;
+	background: var(--primary-color);
 }
 .home .volume i:hover{
 	background: rgba(245,245,245,0.1);
@@ -312,10 +312,10 @@ body{
 }
 
 #play{
-	background: #148F77;
+	background: var(--primary-color);
 }
 .home button:hover{
-	background: #148F77;
+	background: var(--sidebar-color);
 }
 .home i:before{
 	color: #fff;
@@ -469,6 +469,24 @@ body{
   transition: all 0.4s ease-in-out;
 
 }
+.play {
+    display: inline-block;
+    font-weight: 500;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    padding: 8px 40px;
+    font-size: 16px;
+    border-radius: 8px;
+    color: var(--txt-color);
+    cursor: pointer;
+    z-index: 5;
+    transition: all 0.4s ease-in-out;
+    border: none;
+    background: var(--primary-color);
+    overflow: hidden;
+  }
 /*
   .btn:hover, .btn:focus {
     color: #fff;
@@ -603,7 +621,10 @@ label {
     }
   }
 
-
+.volume{
+    color: #017AFF;
+    
+}
 /* tambahan */
 
 /* .PopularRow {

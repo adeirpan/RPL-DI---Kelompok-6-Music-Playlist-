@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\music;
-use App\Models\musics;
 use Illuminate\Http\Request;
-
-class adminMusicController extends Controller
+use App\Models\musics;
+class musicPlayerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,11 +13,20 @@ class adminMusicController extends Controller
      */
     public function index()
     {
+        $list = musics::get();
+        // return view('product.index', ['list' => $prods]);
+        return view('popular', [
+            'list' => $list,
+        ]);
+    }
+
+    public function playMusic($id)
+    {
         $music = musics::get();
         // return view('product.index', ['list' => $prods]);
-        return view('admin.musicControl', [
+        return view('admin.userAdmin', [
             'list' => $music,
-            'action' => 'admin/music'
+            'action' => 'admin/user'
         ]);
     }
 
@@ -52,7 +59,11 @@ class adminMusicController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('mymusic', [
+            'title' => 'Play Music',
+            // 'data' => Product::find($id)
+            'data' => musics::find($id)
+        ]);
     }
 
     /**
@@ -63,7 +74,7 @@ class adminMusicController extends Controller
      */
     public function edit($id)
     {
-        //
+
     }
 
     /**
@@ -86,6 +97,6 @@ class adminMusicController extends Controller
      */
     public function destroy($id)
     {
-
+        //
     }
 }

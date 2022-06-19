@@ -13,37 +13,39 @@
             <thead>
                 <tr>
                     <th width="5px" >#</th>
+                    <th width="3px">ARTIST</th>
                     <th width="3px">TITLE</th>
-                    <th width="3px">TIME</th>
-                    <th width="3px">ALBUM</th>
-                    <th width="3px">Action</th>
+                    <th width="3px">YEAR</th>
+                    <th width="3px">ACTION</th>
+
                 </tr>
             </thead>
 
             <tbody>
+                {{ $i = 1 }}
+                @foreach($list as $d)
+
                 <tr>
-                    <td>1</td>
-                    <td>Tulus - Hati-Hati di Jalan</td>
-                    <td>4:02</td>
-                    <td>Manusia</td>
+                    <td>{{ $i }}</td>
+                    <td>{{ $d->artist }}</td>
+                    <td>{{ $d ->title }}</td>
+                    <td>{{ $d ->year }}</td>
+                    {{-- <td>{{ $d ->premiumStatus }}</td> --}}
                     <td>
+                        <a href="/admin/user/{{ $d->id }}/edit" class="btn btn-primary">Edit</a>
                         <form
                             method="post"
-                            action="admin/user/{{ $data->id }}"
+                            action="/admin/user/{{ $d->id }}"
                             style="display:inline"
-                            onsubmit="return confirm('Yakin Mengubah Status?')">
-                            <!-- @csrf @method('DELETE') -->
-                            <button class="logout">Ubah Status</button>
+                            onsubmit="return confirm('Yakin hapus?')">
+                            @csrf @method('DELETE')
+                            <button class="btn btn-danger">Hapus</button>
                         </form>
                     </td>
+                    {{ $i += 1 }}
+                </tr>
 
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Pamungkas - To The Bone</td>
-                    <td>5:54</td>
-                    <td>Flaying</td>
-                </tr>
+                @endforeach
         	</tbody>
         </table>
     </section>

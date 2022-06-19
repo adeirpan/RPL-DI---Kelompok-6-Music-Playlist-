@@ -13,7 +13,7 @@
                     <th width="3px">TITLE</th>
                     <th width="3px">TIME</th>
                     <th width="3px">ALBUM</th>
-
+                    <th width="5px">Play</th>
                 </tr>
             </thead>
 
@@ -23,25 +23,23 @@
                     <tr>
                     <td>{{ $i }}</td>
                         <td>{{ $list->title }}</td>
-                        <td>4:02</td>
+                        <td>{{ $list->time }}</td>
                         <td>{{ $list->album }}</td>
+                        <td>
+                            <form
+                                method="GET"
+                                action="popular/{{ $list->id }}"
+                                style="display:inline"
+                                onsubmit="">
+                                <button class="play">Play Music</button>
+                            </form>
+                        </td>
                     </tr>
                     {{ $i = $i + 1 }}
                 @endforeach
-{{--
-                <tr>
-                    <td>1</td>
-                    <td>Tulus - Hati-Hati di Jalan</td>
-                    <td>4:02</td>
-                    <td>Manusia</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Pamungkas - To The Bone</td>
-                    <td>5:54</td>
-                    <td>Flaying</td>
-                </tr> --}}
+
         	</tbody>
+
         </table>
     </section>
 

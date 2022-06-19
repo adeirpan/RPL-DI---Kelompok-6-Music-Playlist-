@@ -6,6 +6,7 @@ use App\Http\Controllers\musicController;
 use App\Http\Controllers\registerController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\adminUserController;
+use App\Http\Controllers\musicPlayerController;
 use App\Models\user;
 use App\Models\musics;
 use Illuminate\Cache\RateLimiting\Limit;
@@ -21,6 +22,8 @@ use Illuminate\Cache\RateLimiting\Limit;
 |
 */
 
+Route::get('/playMusic', [musicPlayerController::class, 'playMusic']);
+
 Route::get('/', function () {
     return view('login');
 });
@@ -28,16 +31,13 @@ Route::get('/', function () {
 
 
 Route::get('/admin', function () {
-    return view('admin.musicControl');
+    return redirect('/admin/music');
 });
 
 Route::resource('/admin/music', musicController::class);
 Route::resource('/admin/user', adminUserController::class);
 Route::resource('/profile', ProfileController::class);
-
-Route::get('/admin/music', function () {
-    return view('admin.musicControl');
-});
+Route::resource('/popular', musicPlayerController::class);
 
 
 
@@ -51,12 +51,12 @@ Route::get('/home', function () {
     return view('home');
 });
 
-Route::get('/popular', function () {
-    $list = musics::get();
-    return view('popular',[
-        'list' => $list
-    ]);
-});
+// Route::get('/popular', function () {
+//     $list = musics::get();
+//     return view('popular',[
+//         'list' => $list
+//     ]);
+// });
 
 Route::get('/profile', function () {
     return view('profile');

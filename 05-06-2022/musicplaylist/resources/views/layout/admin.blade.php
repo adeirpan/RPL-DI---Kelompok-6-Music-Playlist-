@@ -48,12 +48,12 @@
                         </a>
                     </li>
 
-                    <li class="nav-link">
+                    {{-- <li class="nav-link">
                         <a href="/admin/account">
 
                             <span class="text nav-text">ACCOUNT</span>
                         </a>
-                    </li>
+                    </li> --}}
 
                     <li class="nav-link">
                         <a href="/admin/user">
