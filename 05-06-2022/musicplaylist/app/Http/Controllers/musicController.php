@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\music;
+use App\Models\musics;
 use Illuminate\Http\Request;
 
 class musicController extends Controller
@@ -32,8 +32,11 @@ class musicController extends Controller
      */
     public function index()
     {
+        $music = musics::get();
+        // return view('product.index', ['list' => $prods]);
         return view('admin.musicControl', [
-            'title' => 'music'
+            'list' => $music,
+            'action' => 'admin/music'
         ]);
     }
 

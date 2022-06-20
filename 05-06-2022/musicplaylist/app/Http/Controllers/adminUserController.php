@@ -82,7 +82,7 @@ class adminUserController extends Controller
         $user->name = $request->name;
         $user->email = $request->email;
         $user->jenisKelamin = $request->jenisKelamin;
-        $user->premiumStatus =  $request->premiumStatus;
+        $user->premiumStatus =  1;
         $user->save();
         return redirect('/admin/user')->with('msg', 'Edit berhasil');
     }
