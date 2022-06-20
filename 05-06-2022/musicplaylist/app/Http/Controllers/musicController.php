@@ -63,12 +63,19 @@ class musicController extends Controller
      */
     public function store(Request $request)
     {
-        $prod = new music();
-        $prod->name = $request->name;
-        $prod->price = $request->price;
-        $prod->deskripsi = $request->deskripsi;
-        $prod->image = $request->image;
-        $prod->save();
+        $music = new musics();
+        $music->title = $request->title;
+        $music->artist = $request->artist;
+        $music->album = $request->album;
+        $music->year = $request->year;
+        $music->genre = $request->genre;
+        $music->path_lirik = $request->path_lirik;
+        $music->path_chord = $request->path_chord;
+        $music->path_downloadmusic = $request->path_downloadmusic;
+        $music->path_imgPoster = $request->path_imgPoster;
+        $music->time = $request->time;
+
+        $music->save();
         return redirect('/admin/music')->with('msg', 'Tambah berhasil');
     }
 
@@ -80,7 +87,7 @@ class musicController extends Controller
      */
     public function show($id)
     {
-        return music::find($id);
+        return musics::find($id);
     }
 
     /**
@@ -96,7 +103,7 @@ class musicController extends Controller
             'method' => 'PUT',
             'action' => "admin/music/$id",
             // 'data' => Product::find($id)
-            'data' => music::find($id)
+            'data' => musics::find($id)
         ]);
     }
 
@@ -120,12 +127,19 @@ class musicController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $prod = music::find($id);
-        $prod->name = $request->name;
-        $prod->price = $request->price;
-        $prod->deskripsi = $request->deskripsi;
-        $prod->image = $request->image;
-        $prod->save();
+        $music = musics::find($id);
+        $music->title = $request->title;
+        $music->artist = $request->artist;
+        $music->album = $request->album;
+        $music->year = $request->year;
+        $music->genre = $request->genre;
+        $music->path_lirik = $request->path_lirik;
+        $music->path_chord = $request->path_chord;
+        $music->path_downloadmusic = $request->path_downloadmusic;
+        $music->path_imgPoster = $request->path_imgPoster;
+        $music->time = $request->time;
+
+        $music->save();
         return redirect('/admin/music')->with('msg', 'Edit berhasil');
     }
 
@@ -137,7 +151,7 @@ class musicController extends Controller
      */
     public function destroy($id)
     {
-        music::destroy($id);
+        musics::destroy($id);
         return redirect('/admin/music')->with('msg', 'Hapus berhasil');
     }
 }

@@ -8,21 +8,7 @@
         @csrf
         <input  type="hidden" name="_method" value="{{ $method }}"/>
 
-        <div>
-            <input type="file" id='input' accept=".mp3, .wav">
-            <div id="cover" style="height: 275px;
-                                    width: 275px;
-                                    border: 1px solid black;
-                                    background-position: center;
-                                    background-size: cover;
-            "></div>
 
-            <p id="title"></p>
-            <p id="artist"></p>
-            <p id="album"></p>
-            <p id="genre"></p>
-            <p id="year"></p>
-        </div>
         <div class="form-group">
             <label class="lab">Title</label>
             <input
@@ -32,7 +18,7 @@
                 name="title"
                 class="form-control"
 
-                value="{{ isset($data)?$data->name:'' }}"/>
+                value="{{ isset($data)?$data->title:'' }}"/>
         </div>
         <div class="form-group">
             <label class="lab">Artist</label>
@@ -42,7 +28,7 @@
                 type="text"
                 name="artist"
                 class="form-control"
-                value="{{ isset($data)?$data->name:'' }}"/>
+                value="{{ isset($data)?$data->artist:'' }}"/>
         </div>
         <div class="form-group">
             <label class="lab">Album</label>
@@ -52,7 +38,7 @@
                 type="text"
                 name="album"
                 class="form-control"
-                value="{{ isset($data)?$data->name:'' }}"/>
+                value="{{ isset($data)?$data->album:'' }}"/>
         </div>
         <div class="form-group">
             <label class="lab">Year</label>
@@ -62,7 +48,7 @@
                 type="text"
                 name="year"
                 class="form-control"
-                value="{{ isset($data)?$data->name:'' }}"/>
+                value="{{ isset($data)?$data->year:'' }}"/>
         </div>
         <div class="form-group">
             <label class="lab">Genre</label>
@@ -72,7 +58,7 @@
                 type="text"
                 name="genre"
                 class="form-control"
-                value="{{ isset($data)?$data->name:'' }}"/>
+                value="{{ isset($data)?$data->genre:'' }}"/>
         </div>
         <div class="form-group">
             <label class="lab">Path Lirik</label>
@@ -81,7 +67,7 @@
                 type="text"
                 name="path_lirik"
                 class="form-control"
-                value="{{ isset($data)?$data->name:'' }}"/>
+                value="{{ isset($data)?$data->path_lirik:'' }}"/>
         </div>
         <div class="form-group">
             <label class="lab">Path Chord</label>
@@ -90,8 +76,19 @@
                 type="text"
                 name="path_chord"
                 class="form-control"
-                value="{{ isset($data)?$data->name:'' }}"/>
+                value="{{ isset($data)?$data->path_chord:'' }}"/>
         </div>
+
+        <div class="form-group">
+            <label class="lab">Path Download Music</label>
+            <input
+                style= "background-color:rgb(184, 184, 184); font-size:16pt"
+                type="text"
+                name="path_downloadmusic"
+                class="form-control"
+                value="{{ isset($data)?$data->path_downloadmusic:'' }}"/>
+        </div>
+
         <div class="form-group">
             <label class="lab">path Music File</label>
             <input
@@ -99,7 +96,7 @@
                 type="text"
                 name="path_music"
                 class="form-control"
-                value="{{ isset($data)?$data->name:'' }}"/>
+                value="{{ isset($data)?$data->path_music:'' }}"/>
         </div>
 
 
@@ -110,8 +107,19 @@
                 type="text"
                 name="path_imgPoster"
                 class="form-control"
-                value="{{ isset($data)?$data->image:'' }}"/>
+                value="{{ isset($data)?$data->path_imgPoster:'' }}"/>
         </div>
+
+        <div class="form-group">
+            <label label class="lab">Duration</label>
+            <input
+                style= "background-color:rgb(184, 184, 184); font-size:16pt"
+                type="text"
+                name="time"
+                class="form-control"
+                value="{{ isset($data)?$data->time:'' }}"/>
+        </div>
+
         {{-- file upload /images --}}
         {{-- <div class="mb-3">
             <label for="image" class="form-label">Post Image</label>

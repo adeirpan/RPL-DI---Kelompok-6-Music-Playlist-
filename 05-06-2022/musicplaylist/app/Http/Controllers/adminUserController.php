@@ -61,7 +61,7 @@ class adminUserController extends Controller
      */
     public function edit($id)
     {
-        return view('profileEdit', [
+        return view('admin.userForm', [
             'title' => 'Edit',
             'method' => 'PUT',
             'action' => "admin/user/$id",
@@ -82,6 +82,7 @@ class adminUserController extends Controller
         $user->name = $request->name;
         $user->email = $request->email;
         $user->jenisKelamin = $request->jenisKelamin;
+        $user->premiumStatus =  $request->premiumStatus;
         $user->save();
         return redirect('/admin/user')->with('msg', 'Edit berhasil');
     }

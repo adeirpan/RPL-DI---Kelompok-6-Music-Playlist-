@@ -63,7 +63,12 @@ class adminMusicController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('admin.musicForm', [
+            'title' => 'Edit',
+            'method' => 'PUT',
+            'action' => "admin/music/$id",
+            'data' => musics::find($id)
+        ]);
     }
 
     /**
@@ -86,6 +91,7 @@ class adminMusicController extends Controller
      */
     public function destroy($id)
     {
-
+        musics::destroy($id);
+        return redirect('/admin/music')->with('msg', 'Hapus berhasil');
     }
 }

@@ -3,12 +3,12 @@
 @section('container')
 
     <section class="home">
-        <div class="text1" style="margin-top: 120px;margin-left: 100px;">
+        {{-- <div class="text1" style="margin-top: 120px;margin-left: 100px;">
             TOP 10'S
         </div>
         <div>
             <a class="text1" href="/admin/music/create">Add Music</a>
-        </div>
+        </div> --}}
         <table id="contact-detail" class="table" cellspacing="0" width="1200px">
             <thead>
                 <tr>

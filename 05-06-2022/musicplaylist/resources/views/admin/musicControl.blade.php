@@ -32,10 +32,10 @@
                     <td>{{ $d ->year }}</td>
                     {{-- <td>{{ $d ->premiumStatus }}</td> --}}
                     <td>
-                        <a href="/admin/user/{{ $d->id }}/edit" class="btn btn-primary">Edit</a>
+                        <a href="/admin/music/{{ $d->id }}/edit" class="btn btn-primary">Edit</a>
                         <form
                             method="post"
-                            action="/admin/user/{{ $d->id }}"
+                            action="/admin/music/{{ $d->id }}"
                             style="display:inline"
                             onsubmit="return confirm('Yakin hapus?')">
                             @csrf @method('DELETE')
