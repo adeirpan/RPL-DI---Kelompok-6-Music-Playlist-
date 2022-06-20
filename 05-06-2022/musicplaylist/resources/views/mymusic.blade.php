@@ -26,21 +26,20 @@
             <p id="artist">{{ $data->artist }}</p>
         </div>
 
-        <a class="fa-stack" style="margin-left: 600px;margin-top:20px;">
-            <i class="fa-solid fa-repeat fa-lg"></i>
         </a>
+        @if (auth()->user()->premiumStatus == 1)
+            <a class="fa-stack" style= "margin-left: 650px;margin-top:20px;color:  #8D9197;" href="{{ $data->path_downloadmusic }}">
+                <i class="fa-solid fa-download fa-lg"></i>
+            </a>
 
-        <a class="fa-stack" style= "margin-left: 30px;margin-top:20px;color:  #8D9197;" href="{{ $data->path_downloadmusic }}">
-            <i class="fa-solid fa-download fa-lg"></i>
-        </a>
+            <a class="fa-stack" style= "margin-left: 30px;margin-top:20px;color:  #8D9197;"href="#popup1" >
+                <i class="fa-solid fa-globe fa-lg"></i>
+            </a>
 
-        <a class="fa-stack" style= "margin-left: 30px;margin-top:20px;color:  #8D9197;"href="#popup1" >
-            <i class="fa-solid fa-globe fa-lg"></i>
-        </a>
-
-        <a class="fa-stack" style= "margin-left: 30px;margin-top:20px;color:  #8D9197; " href="{{ $data->path_chord }}">
-            <i class="fa-solid fa-location-pin fa-lg"></i>
-        </a>
+            <a class="fa-stack" style= "margin-left: 30px;margin-top:20px;color:  #8D9197; " href="{{ $data->path_chord }}">
+                <i class="fa-solid fa-location-pin fa-lg"></i>
+            </a>
+        @endif
 
         <div class="volume" >
             <p id="volume_show">90</p>
