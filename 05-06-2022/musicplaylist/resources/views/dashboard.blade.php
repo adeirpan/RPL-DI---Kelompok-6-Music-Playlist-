@@ -6,7 +6,6 @@
         @if (auth()->user())
         <div class="text">
             WELCOME BACK, {{ auth()->user()->name}}
-            <a class="" href="/logout">logout</a>
         </div>
         {{-- @else --}}
 

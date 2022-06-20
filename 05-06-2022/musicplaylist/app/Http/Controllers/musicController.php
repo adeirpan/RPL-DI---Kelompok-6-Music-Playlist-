@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\music;
-use App\Models\musics;
 use Illuminate\Http\Request;
 
 class musicController extends Controller
@@ -33,11 +32,8 @@ class musicController extends Controller
      */
     public function index()
     {
-        $list = musics::get();
-        // return view('product.index', ['list' => $prods]);
         return view('admin.musicControl', [
-            'list' => $list,
-            'action' => 'admin/music'
+            'title' => 'music'
         ]);
     }
 
@@ -95,17 +91,6 @@ class musicController extends Controller
             'title' => 'Edit',
             'method' => 'PUT',
             'action' => "admin/music/$id",
-            // 'data' => Product::find($id)
-            'data' => music::find($id)
-        ]);
-    }
-
-    public function play($id)
-    {
-        return view('musicPlayer', [
-            'title' => 'Edit',
-            'method' => 'GET',
-            'action' => "musicPlayer/$id",
             // 'data' => Product::find($id)
             'data' => music::find($id)
         ]);

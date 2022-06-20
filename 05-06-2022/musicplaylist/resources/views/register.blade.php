@@ -49,16 +49,16 @@
 
                                 <div class="form-outline">
                                     <label class="form-label" for="form3Example4cg">Jenis Kelamin</label>
-                                    <input type="text" name="jenisKelamin" id="jenisKelamin" for= "jenisKelamin" class="form-control form-control-lg @error('jenisKelamin') is-invalid @enderror"/>
+                                    <input type="" name="jenisKelamin" id="jenisKelamin" for= "jenisKelamin" class="form-control form-control-lg @error('jenisKelamin') is-invalid @enderror"/>
                                 </div>
-
+                                </br>
                                 <input hidden type="text" id="premiumStatus" name="premiumStatus" value=0>
                                 <input hidden type="text" id="role" name="role" value="guest">
 
-                                <div class="d-flex justify-content-center mt-2">
+                                <div class="d-flex justify-content-start mt-2">
                                     <button type="submit" class="btn btn-primary">Register</button>
                                 </div>
-
+                                </br>
                                 <p class="text-center text-muted">
                                     Have already an account?
                                     <a href="/login" class="link-info">

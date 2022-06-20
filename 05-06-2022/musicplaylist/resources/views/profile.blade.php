@@ -15,9 +15,11 @@
         @if(auth()->user()->premiumStatus == 0 )
         <div class="text2"style="font-size: 18px;margin-top:5px;">
             Non-Premium User
-            <a class="" href="/logout">logout</a>
+        </div>
+        <div class="text2"style="font-size: 18px;margin-top:5px;">
             <a class="" href="/profile/{{ auth()->user()->id}}/edit">Edit Profile</a>
         </div>
+        
         @else
         <div class="text2"style="font-size: 18px;margin-top:5px;">
             Premium User

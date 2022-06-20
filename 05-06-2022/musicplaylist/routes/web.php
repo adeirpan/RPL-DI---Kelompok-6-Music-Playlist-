@@ -4,10 +4,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\loginController;
 use App\Http\Controllers\musicController;
 use App\Http\Controllers\registerController;
+use App\Http\Controllers\premiumPlanController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\adminUserController;
 use App\Http\Controllers\musicPlayerController;
-use App\Models\user;
+use App\Models\music;
 use App\Models\musics;
 use Illuminate\Cache\RateLimiting\Limit;
 
@@ -39,8 +40,6 @@ Route::resource('/admin/user', adminUserController::class);
 Route::resource('/profile', ProfileController::class);
 Route::resource('/popular', musicPlayerController::class);
 
-
-
 Route::get('/dashboard', function () {
     $popularMusic = musics::limit(4)->get();
 
@@ -50,13 +49,6 @@ Route::get('/dashboard', function () {
 Route::get('/home', function () {
     return view('home');
 });
-
-// Route::get('/popular', function () {
-//     $list = musics::get();
-//     return view('popular',[
-//         'list' => $list
-//     ]);
-// });
 
 Route::get('/profile', function () {
     return view('profile');
@@ -72,6 +64,14 @@ Route::get('/mymusic', function () {
 
 Route::get('/edit', function () {
     return view('edit');
+});
+
+Route::get('/payment', function () {
+    return view('payment');
+});
+
+Route::get('/premiumPlan', function () {
+    return view('premiumPlan');
 });
 
 Route::get('/login', [loginController::class, 'index']);
