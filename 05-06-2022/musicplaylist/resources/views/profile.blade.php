@@ -19,12 +19,11 @@
         <div class="text2"style="font-size: 18px;margin-top:5px;">
             <a class="" href="/profile/{{ auth()->user()->id}}/edit">Edit Profile</a>
         </div>
-
+        
         @else
         <div class="text2"style="font-size: 18px;margin-top:5px;">
             Premium User
         </div>
-
         <div class="text2"style="font-size: 18px;margin-top:5px;">
             <a class="" href="/profile/{{ auth()->user()->id}}/edit">Edit Profile</a>
         </div>
