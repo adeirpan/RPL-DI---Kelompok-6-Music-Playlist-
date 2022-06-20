@@ -50,13 +50,6 @@
                         </a>
                     </li>
 
-                    <li class="nav-link">
-                        <a href="/mymusic">
-
-                            <span class="text nav-text">MY MUSIC</span>
-                        </a>
-                    </li>
-
                     </br>
 
                     <al>
@@ -79,13 +72,6 @@
                         </a>
                     </li>
 
-                    <li class="nav-link">
-                        <a href="/popular">
-
-                            <span class="text nav-text">DAILY MIX</span>
-                        </a>
-                    </li>
-
                     </br>
 
                     <al>
@@ -102,18 +88,17 @@
                     </li>
 
                     <li class="nav-link">
-                        <a href="/popular">
-
-                            <span class="text nav-text">OFFLINE MUSIC </span>
-                        </a>
-                    </li>
-
-                    <li class="nav-link">
-                        <a href="#">
+                        <a href="/premiumPlan">
 
                             <span class="text nav-text">PREMIUM PLAN </span>
                         </a>
                     </li>
+
+                  
+                        <a href="/login">
+                                <button class="logout">LOGOUT </button>
+                        </a>
+
 
                 </ul>
             </div>

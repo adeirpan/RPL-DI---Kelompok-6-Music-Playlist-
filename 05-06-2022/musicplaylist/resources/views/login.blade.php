@@ -30,21 +30,18 @@
                         </div>
                             <div class="logo d-flex justify-content-center"><img src="{!! asset('./img/logo.png') !!}" alt="" style="width: 150px; height: 120px;  "/></div>
                         
-
                         @if(session()->has('success'))
-                            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                {{ session('success') }}
-                                ,<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-
-                            </div>
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            {{ session('success') }}
+                            ,<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
                         @endif
 
-                        @if(session()->has('Erloginror'))
-                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                {{ session('loginError') }}
-                                ,<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-
-                            </div>
+                        @if(session()->has('loginError'))
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            {{ session('loginError') }}
+                            ,<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
                         @endif
 
                         <div
