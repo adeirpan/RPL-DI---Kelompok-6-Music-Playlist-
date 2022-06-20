@@ -372,6 +372,8 @@ body {
 
 .search_wrap.search_wrap_3 .search_box .btn {
     border-radius: 50%;
+    margin-top: 20px;
+    margin-right: -20px;
 }
 
 /*tabel*/
